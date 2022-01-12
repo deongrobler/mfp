@@ -29,6 +29,6 @@ jobs:
         run: aws s3 sync dist s3://mfe-deon-dashboard/container/latest
         env:
           AWS_ACCESS_KEY_ID: 'AKIAQ7ZBYEPTNDIFS6UO'
-          AWS_SECRET_ACCESS_KEY: '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'
+          AWS_SECRET_ACCESS_KEY: '${‌{ secrets.AWS_SECRET_ACCESS_KEY }}'
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
           
