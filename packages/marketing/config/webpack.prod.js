@@ -23,4 +23,3 @@ const prodConfig = {
   
 // Order matters, last overrides if its re-specified
 module.exports = merge(commonConfig, prodConfig);
-
