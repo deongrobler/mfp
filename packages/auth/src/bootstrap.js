@@ -21,6 +21,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath } ) => {
     const history = defaultHistory || createMemoryHistory({
         initialEntries: [initialPath],
     });
+    
     if (onNavigate) {
         history.listen(onNavigate);
     }
@@ -42,7 +43,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath } ) => {
 
 // If above
 if (process.env.NODE_ENV === 'development') {
-    const devRoot = document.querySelector("#__marketing-dev-root");
+    const devRoot = document.querySelector("#__auth-dev-root");
     if (devRoot) {
         // The reason for the createBrowserHistory() argument is to cater for standalone development to still have the routes like /pricing, etc...
         mount(devRoot, { defaultHistory: createBrowserHistory()});
