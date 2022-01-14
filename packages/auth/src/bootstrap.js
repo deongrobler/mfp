@@ -15,7 +15,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createMemoryHistory, createBrowserHistory } from 'history';
 
-const mount = (el, { onNavigate, defaultHistory, initialPath } ) => {
+const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath } ) => {
     // The default history is only used for standalone development mode 
     // See comment below ie. if (process.env.NODE_ENV === 'development')
     const history = defaultHistory || createMemoryHistory({
@@ -27,7 +27,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath } ) => {
     }
     
     ReactDOM.render(
-        <App history={history} />,
+        <App onSignIn={onSignIn} history={history} />,
         el
     );
 

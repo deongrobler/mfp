@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { mount } from 'auth/AuthApp';
 import { useHistory } from 'react-router-dom';
 
-export default () => {
+export default ( { onSignIn } ) => {
     const ref = useRef(null);
     const history = useHistory();
 
@@ -22,6 +22,10 @@ export default () => {
                 if (history.location.pathname !== nextPathname) {
                     history.push(nextPathname);
                 }
+            },
+            onSignIn: () => {
+                console.log('User signed in');
+                onSignIn();
             }
         });
         // mount is going to take it and create an instance of our marketting app and render 
